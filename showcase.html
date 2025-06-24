@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ title }}{% endblock title %}
+
+{% block meta %}
+{# Script for rendering Lucide icons #}
+<script src="https://unpkg.com/lucide@latest"></script>
+{% endblock meta %}
+
+{% block content %}
+<main class="container mx-auto px-6 py-12">
+    <article>
+        <!-- Project Image -->
+        <div class="mb-8">
+            <img src="{{ image }}" alt="{{ title }} hero image"
+                class="w-full h-auto max-h-[500px] object-cover rounded-lg shadow-lg">
+        </div>
+
+        <!-- Header: Title and Links -->
+        <header class="flex flex-col md:flex-row justify-between items-center mb-6">
+            <h1 class="text-4xl md:text-5xl font-bold header-text mb-4 md:mb-0">{{ title }}</h1>
+
+            <!-- Social Links -->
+            <div class="flex items-center space-x-6">
+                <a href="{{ github_link }}" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <i data-lucide="github" class="w-7 h-7"></i>
+                    <span class="sr-only">GitHub</span>
+                </a>
+
+                {% if youtube_link %}
+                <a href="{{ youtube_link }}" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <i data-lucide="youtube" class="w-7 h-7"></i>
+                    <span class="sr-only">YouTube</span>
+                </a>
+                {% endif %}
+
+                {% if project_link %}
+                <a href="{{ project_link }}" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <i data-lucide="globe" class="w-7 h-7"></i>
+                    <span class="sr-only">Project Website</span>
+                </a>
+                {% endif %}
+            </div>
+        </header>
+
+        <!-- Meta Information -->
+        <div class="mb-8">
+            <p class="body-text font-medium">Project Created: <span class="text-gray-500 dark:text-gray-400">{{ year_created }}</span></p>
+        </div>
+
+        <!-- Project Description -->
+        <div class="prose dark:prose-invert max-w-none body-text text-lg">
+            <p>{{ description }}</p>
+            <!-- You can add more detailed paragraphs, lists, or other content here -->
+        </div>
+    </article>
+</main>
+{% endblock content %}

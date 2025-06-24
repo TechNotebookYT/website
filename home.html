@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Pranav Bala{% endblock title %}
+
+{% block meta %}
+
+
+{% endblock meta %}
+
+
+{% block content %}
+<!-- Main Content -->
+<main class="flex items-center justify-center min-h-[calc(100vh-80px)] px-4">
+    <div class="text-center max-w-2xl">
+        <!-- Profile Picture -->
+        <img src="https://github.com/TechNotebookYT/ws-files/blob/main/new_pfp.jpg?raw=true" alt="PB"
+            class="w-55 h-55 rounded-full mx-auto mb-6 shadow-lg">
+
+        <!-- Name -->
+        <h1 class="text-4xl md:text-5xl font-bold mb-2 header-text">Hi, I'm Pranav Bala</h1>
+
+        <!-- Short Description -->
+        <p class="text-lg body-text mb-8">
+            I’m a Computer Engineering student at UIUC focused on computer vision, robotics, and networking. I build intelligent
+            systems that tackle real-world challenges.
+        </p>
+
+        <!-- Links to other pages -->
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="/projects"
+                class="bg-gray-800 text-white dark:bg-gray-300 dark:text-gray-900 font-semibold py-2 px-5 rounded-lg shadow hover:bg-gray-700 dark:hover:bg-gray-400 transition-colors transform hover:scale-105">
+                View My Work
+            </a>
+            <!-- <a href="/blog"
+                class="bg-gray-800 text-white dark:bg-gray-300 dark:text-gray-900 font-semibold py-2 px-5 rounded-lg shadow hover:bg-gray-700 dark:hover:bg-gray-400 transition-colors transform hover:scale-105">
+                Read My Blog
+            </a> -->
+            <a href="/youtube"
+                class="bg-gray-800 text-white dark:bg-gray-300 dark:text-gray-900 font-semibold py-2 px-5 rounded-lg shadow hover:bg-gray-700 dark:hover:bg-gray-400 transition-colors transform hover:scale-105 youtube-glow transition-shadow duration-300">
+                Watch My Videos
+            </a>
+        </div>
+        
+        <div class="flex justify-center w-full gap-6 mt-8">
+            <a href="https://github.com/TechNotebookYT" target="_blank" rel="noopener noreferrer" class="social-link">
+                <i data-lucide="github" class="h-6 w-6"></i>
+                <span class="sr-only">GitHub</span>
+            </a>
+            <a href="https://linkedin.pranavbala.com/" target="_blank" rel="noopener noreferrer" class="social-link">
+                <i data-lucide="linkedin" class="h-6 w-6"></i>
+                <span class="sr-only">LinkedIn</span>
+            </a>  
+        </div>
+
+    </div>
+</main>
+{% endblock content %}

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}404 - Lost in Orbit{% endblock title %}
+
+{% block meta %}
+{% endblock meta %}
+
+{% block content %}
+<!-- Main Content -->
+<main class="flex items-center justify-center min-h-[calc(100vh-80px)] px-4 text-center">
+    <div class="max-w-md">
+        <!-- Playful Icon -->
+        <div class="flex justify-center mb-6 text-blue-500 dark:text-blue-400">
+            <i data-lucide="rocket" class="h-24 w-24"></i>
+        </div>
+
+        <!-- Error Heading -->
+        <h1 class="text-6xl md:text-8xl font-bold header-text">404</h1>
+
+        <!-- Subheading -->
+        <p class="text-2xl font-semibold header-text mt-4">Houston, We Have a Problem.</p>
+
+        <!-- Informative Message -->
+        <p class="text-lg body-text mt-4">
+            It appears you've ventured beyond the designated flight path. The page you're looking for might be on a
+            different trajectory or has already left the atmosphere.
+        </p>
+
+        <!-- Home Button -->
+        <div class="mt-8">
+            <a href="/"
+                class="bg-gray-800 text-white dark:bg-gray-300 dark:text-gray-900 font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-gray-700 dark:hover:bg-gray-400 transition-colors transform hover:scale-105 inline-block">
+                Return to Launchpad
+            </a>
+        </div>
+    </div>
+</main>
+{% endblock content %}

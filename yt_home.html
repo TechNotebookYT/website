@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}My YouTube Channel{% endblock title %}
+
+{% block meta %}
+{% endblock meta %}
+
+{% block content %}
+<main class="container mx-auto px-6 py-12">
+    
+    <!-- Channel Header -->
+    <div class="flex flex-col md:flex-row items-center text-center md:text-left mb-12">
+        <!-- Channel Logo -->
+        <a href="https://youtube.com/technotebook" target="_blank" rel="noopener noreferrer"
+            class="mb-6 md:mb-0 md:mr-8 flex-shrink-0">
+            <img src="https://raw.githubusercontent.com/TechNotebookYT/ws-files/refs/heads/main/TN-Transparent.png"
+                alt="Tech Notebook Logo"
+                class="w-32 h-32 rounded-full shadow-lg transform hover:scale-105 transition-transform duration-300">
+        </a>
+
+        <!-- Channel Info -->
+        <div>
+            <div class="flex items-center justify-center md:justify-start space-x-3">
+                <h2 class="text-4xl md:text-5xl font-bold header-text">Tech Notebook</h2>
+                <a href="https://youtube.com/technotebook" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <i data-lucide="youtube" class="w-8 h-8 md:w-10 md:h-10"></i>
+                </a>
+            </div>
+            <p class="text-lg body-text mt-4 max-w-2xl">
+                Welcome to my channel! Here, I explore topics in computer vision, robotics, and software engineering. I
+                share tutorials, project deep dives, and insights into the life of a computer engineering student.
+            </p>
+        </div>
+    </div>
+
+    <!-- Latest Video Section -->
+    <div>
+        <h2 class="text-3xl font-bold header-text mb-8 text-center">Latest Video</h2>
+
+        <div class="flex flex-col items-center space-y-8">
+
+            <!-- Video Embed -->
+            <div class="w-half max-w-4x2">
+                <div class="aspect-w-16 aspect-h-9">
+                    <iframe src="https://www.youtube.com/embed/wemZTvgX4Jw?si=BTHUNkvE7LsmdhWm" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen class="w-full h-full rounded-lg shadow-md">
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Video Details -->
+            <div class="w-full max-w-4xl text-center">
+                <h3 class="text-2xl font-bold header-text mb-4">{{ video.title }}</h3>
+                <p class="body-text mb-6">{{ video.description }}</p>
+
+                <!-- Links -->
+                <div class="flex justify-center items-center space-x-6">
+                    <a href="{{ video.github_link }}" target="_blank" rel="noopener noreferrer"
+                        class="flex items-center space-x-2 social-link">
+                        <i data-lucide="github" class="h-6 w-6"></i>
+                        <span class="font-medium">View on GitHub</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- View All Button -->
+        <div class="text-center mt-12">
+            <a href="https://youtube.com/technotebook" target="_blank" rel="noopener noreferrer"
+                class="bg-red-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-red-700 transition-colors transform hover:scale-105 inline-block youtube-glow">
+                View All on YouTube
+            </a>
+        </div>
+    </div>
+</main>
+{% endblock content %}

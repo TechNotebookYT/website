@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}My Projects{% endblock title %}
+
+{% block content %}
+<main class="container mx-auto px-6 py-12">
+    <div class="text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-bold header-text">My Projects</h1>
+        <p class="text-lg body-text mt-4">Here are some of the projects I'm proud to have worked on.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        {% for project in projects %}
+        <!-- Project Card -->
+        <div
+            class="group relative bg-white/30 dark:bg-gray-900/40 backdrop-blur-lg rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-all duration-300">
+
+            <!-- Stretched Link: Makes the entire card clickable -->
+            <a href="/projects/{{ project.project_id }}/" class="absolute inset-0 z-10">
+                <span class="sr-only">View details for {{ project.title }}</span>
+            </a>
+
+            <img src="{{ project.image }}" alt="{{ project.title }}" class="w-full h-48 object-cover">
+
+            <div class="p-6">
+                <h2 class="text-2xl font-bold header-text mb-2">{{ project.title }}</h2>
+                <p class="body-text mb-4">{{ project.description }}</p>
+                <div class="flex items-center justify-between">
+                    <!-- GitHub & YouTube Links -->
+                    <div class="flex items-center space-x-4">
+                        <a href="{{ project.github_link }}" target="_blank" rel="noopener noreferrer"
+                            class="social-link relative z-20">
+                            <i data-lucide="github" class="h-6 w-6"></i>
+                            <span class="sr-only">GitHub</span>
+                        </a>
+                        <a href="{{ project.youtube_link }}" target="_blank" rel="noopener noreferrer"
+                            class="social-link relative z-20">
+                            <i data-lucide="youtube" class="h-6 w-6"></i>
+                            <span class="sr-only">YouTube</span>
+                        </a>
+                    </div>
+
+                    <!-- Learn More Icon Link -->
+                    <a href="/projects/{{ project.project_id }}/" class="social-link relative z-20">
+                        <i data-lucide="arrow-right-circle" class="h-6 w-6"></i>
+                        <span class="sr-only">Learn More</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+</main>
+{% endblock content %}
