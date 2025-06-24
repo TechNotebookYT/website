@@ -1,4 +1,4 @@
-# My Website - available at pranavbala.com
+# My Website - [pranavbala.com](https://www.pranavbala.com/)
 
 This repository contains all of the HTML Files used to build my website.
 
